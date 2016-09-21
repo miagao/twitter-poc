@@ -35,5 +35,5 @@ sh download.sh hashtags
 Este script baixa os 100 mais recentes tweets contendo cada hashtag que está listada no arquivo de entrada ./hashtags em um diretório ./download/. 
 
 
-
+Obs: ao final do download, o script faz o upload da pasta para o diretório home do hdfs, necessário para a fase seguinte, onde o Spark busca os arquivos. 
 

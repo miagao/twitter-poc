@@ -9,7 +9,9 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-while IFS='' read -r hashtag || [[ -n "$hashtag" ]]; do
+while IFS='' read -r hashtag || [ -n "$hashtag" ]; do
         echo "hashtag: $hashtag"
         twurl  "/1.1/search/tweets.json?result_type=recent&count=200&q=$hashtag" > ./downloads/$hashtag
 done < "$filename"
+
+hdfs dfs -put -f downloads 
